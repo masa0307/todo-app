@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Folder;
-
+use App\Models\Task;
 
 class FoldersController extends Controller
 {
     public function index(){
         $folders=Folder::get();
-        return view('index')->with('folders', $folders)->with('id', 1);
+        $tasks=Task::get();
+        return view('index')->with('folders', $folders)->with('tasks', $tasks)->with('id', 1);;
     }
 
     public function folder() {
@@ -21,11 +22,6 @@ class FoldersController extends Controller
         $folder = new Folder();
         $folder->name = $request->name;
         $folder->save();
-        return redirect()->route('index');
-    }
-
-    public function show($id){
-        $folders=Folder::get();
-        return view('index')->with('folders', $folders)->with('id', $id);
+        return redirect(route('tasks.show', ['id' => $folder->id,]));
     }
 }

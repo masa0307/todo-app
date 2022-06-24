@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,13 +18,17 @@
 
     <main class="flex justify-around">
         <section class="w-2/6 border-solid border border-gray-400 rounded-md ml-8 my-8">
-            <h3 class="bg-gray-300 p-2">フォルダを追加する
+            <h3 class="bg-gray-300 p-2">タスクを追加する
             </h3>
-            <form method="post" action="{{route("folders.create")}}">
+            <form method="post" action="{{route("tasks.create")}}">
                 @csrf
                 <div class="p-2">
-                    <p>フォルダ名</p>
-                    <input type="text" name="name" class="border-solid border border-gray-400 rounded-md w-full p-1">
+                    <p>タイトル</p>
+                    <input type="text" name="title" class="border-solid border border-gray-400 rounded-md w-full p-1">
+                    <p>期限</p>
+                    <input type="date" name="limit" class="border-solid border border-gray-400 rounded-md w-full p-1">
+                    <input type="hidden" name="state" value="未着手">
+                    <input type="hidden" name="folder_id" value="{{$id}}">
                     <div class="flex flex-row-reverse">
                         <input type="submit" value="送信" class="text-white bg-blue-500 rounded-md p-1 my-3">
                     </div>
