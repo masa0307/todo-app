@@ -25,6 +25,10 @@ Route::post('/folders/create', [FoldersController::class,"create"])->name('folde
 Route::get('/tasks/{id}', [TasksController::class,"task"])->name('tasks');
 Route::get('/folders/{id}/tasks', [TasksController::class,"show"])->name('tasks.show');
 
+Route::get('/tasks/{id}/edit', [TasksController::class,"edit"])->name('tasks.edit');
+Route::patch('/tasks/update', [TasksController::class,"update"])->name('tasks.update');
+
+
 Route::post('/tasks/create', [TasksController::class,"create"])->name('tasks.create');
 
 
