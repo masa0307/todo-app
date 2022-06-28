@@ -9,9 +9,10 @@ use App\Models\Task;
 class FoldersController extends Controller
 {
     public function index(){
-        $folders=Folder::get();
-        $tasks=Task::get();
-        return view('index')->with('folders', $folders)->with('tasks', $tasks)->with('id', 1);;
+        $folders=Folder::all();
+        $tasks=Task::all();
+        $id =1;
+        return view('index', compact('folders', 'tasks', 'id'));
     }
 
     public function folder() {
@@ -22,6 +23,6 @@ class FoldersController extends Controller
         $folder = new Folder();
         $folder->name = $request->name;
         $folder->save();
-        return redirect(route('tasks.show', ['id' => $folder->id,]));
+        return redirect(route('tasks.show', ['id' => $folder->id]));
     }
 }

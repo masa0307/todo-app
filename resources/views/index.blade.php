@@ -47,7 +47,7 @@
                                 <td class="w-8/12">{{$task->title}}</td>
                                 <td class="w-1/12">{{$task->state}}</td>
                                 <td class="w-2/12">{{$task->limit}}</td>
-                                <td class="w-1/12"><a href="" class="text-blue-400">編集</a></td>
+                                <td class="w-1/12"><a href="{{route('tasks.edit',['id'=>$task->id])}}" class="text-blue-400">編集</a></td>
                             </tr>
                         @endforeach
                     </tbody>
