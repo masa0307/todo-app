@@ -12,7 +12,7 @@
         <h2 class="text-2xl"><a href="{{route('index')}}">ToDo App</a></h2>
         <div class="flex">
             <p>Hello</p>
-            <p><a href="">Logout</a></p>
+            <p><a href="{{route('logout')}}">Logout</a></p>
         </div>
     </header>
 
