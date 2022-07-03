@@ -15,4 +15,9 @@ class Task extends Model
         'limit',
         'folder_id'
     ];
+
+    public function folder()
+    {
+        return $this->belongsTo(Folder::class);
+    }
 }
