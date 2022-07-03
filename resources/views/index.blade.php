@@ -41,16 +41,16 @@
                         <th class="w-2/12 text-left">期限</th>
                     </tr>
                 </thead>
-                    <tbody class="block">
-                        @foreach($tasks as $task)
-                            <tr class="flex border-solid border-t border-gray-400 px-4 py-2">
-                                <td class="w-8/12">{{$task->title}}</td>
-                                <td class="w-1/12">{{$task->state}}</td>
-                                <td class="w-2/12">{{$task->limit}}</td>
-                                <td class="w-1/12"><a href="{{route('tasks.edit',['id'=>$task->id])}}" class="text-blue-400">編集</a></td>
-                            </tr>
-                        @endforeach
-                    </tbody>
+                <tbody class="block">
+                    @foreach($tasks as $task)
+                        <tr class="flex border-solid border-t border-gray-400 px-4 py-2">
+                            <td class="w-8/12">{{$task->title}}</td>
+                            <td class="w-1/12">{{$task->state}}</td>
+                            <td class="w-2/12">{{$task->limit}}</td>
+                            <td class="w-1/12"><a href="{{route('tasks.edit',['id'=>$task->id])}}" class="text-blue-400">編集</a></td>
+                        </tr>
+                    @endforeach
+                </tbody>
             </table>
         </section>
     </main>
